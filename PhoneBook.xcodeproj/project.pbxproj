@@ -121,13 +121,6 @@
 			path = Storage;
 			sourceTree = "<group>";
 		};
-		328A0BE8206F509B0058B481 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
 		328A0C06206FADE20058B481 /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,7 +171,6 @@
 			children = (
 				328A0BE6206F503B0058B481 /* ContactsFile.txt */,
 				328A0C06206FADE20058B481 /* Contacts */,
-				328A0BE8206F509B0058B481 /* Classes */,
 				328A0C09206FCD580058B481 /* Details */,
 				32C4D48F206EA02B00030A6C /* Menu */,
 				329920E72070F8660029103D /* Pages */,

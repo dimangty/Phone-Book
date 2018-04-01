@@ -14,9 +14,8 @@ class StorageManager: NSObject {
     
     // MARK: - Init Context
     
-    /*
-     Инициализация Core Data
-     */
+    //Инициализация Core Data
+    
     lazy var managedObjectModel: NSManagedObjectModel = {
         let modelPath = Bundle.main.path(forResource: "Model", ofType: "momd")
         let modelUrl = NSURL.fileURL(withPath: modelPath!)
@@ -152,10 +151,10 @@ class StorageManager: NSObject {
     func removeContact(contactItem:ContactItem!, groupName:String?) {
         let contact: Contact? = getContact(contactID: contactItem.contactID)
         if(contact != nil) {
-            if(groupName == nil) {
+            if(groupName == nil) {//Удаление из базы
                 let context = managedObjectContext
                 context.delete(contact!)
-            } else {
+            } else {//Удаление из группы
                 let group = getGroup(groupName: groupName!)
                 contact?.removeFromGroups(group!)
             }
