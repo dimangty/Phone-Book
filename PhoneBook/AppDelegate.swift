@@ -16,7 +16,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        if(UserDefaults.standard.object(forKey: "initStore") == nil) {
+            print("init store")
+            initStore()
+        }
         return true
+    }
+    
+    func initStore() {
+        let filePath = Bundle.main.path(forResource: "ContactsFile", ofType: "txt")
+        if filePath != nil {
+            do {
+                let fileContent = try String(contentsOfFile: filePath!)
+                let data = fileContent.data(using: .utf8)
+                let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? [Any]
+                
+                for group in json! {
+                    let groupName = (group as! [String:Any])["GroupName"] as! String
+                    let contacts = (group as! [String:Any])["Contacts"] as? [Any]
+                    
+                    for contact in contacts! {
+                      let contactItem = ContactItem.init()
+                      contactItem.address = (contact as! [String:Any])["address"] as! String
+                      contactItem.fullName = (contact as! [String:Any])["name"] as! String
+                      contactItem.phone = (contact as! [String:Any])["phone"] as! String
+                      StorageManager.shared.addContact(contactItem: contactItem, toGroupName: groupName)
+                    }
+                }
+                
+                
+            } catch {
+                print("Read Error")
+            }
+        }
+        
+        UserDefaults.standard.set(true, forKey: "initStore")
+        UserDefaults.standard.synchronize()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

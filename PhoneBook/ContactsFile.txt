@@ -1,0 +1,62 @@
+[
+   {
+    "GroupName":"Friends",
+    "Contacts": [
+      {
+        "name": "JAMES",
+        "address": "Address1",
+        "phone" : "811111"
+      }, 
+      {
+        "name": "JOHN",
+        "address": "Address1",
+        "phone" : "6745445"
+      },
+      {
+        "name": "ROBERT",
+        "address": "Address1",
+        "phone" : "818545428"
+      }
+   ]
+  },
+   {
+    "GroupName":"Humans",
+    "Contacts": [
+         {
+        "name": "CHARLES",
+        "address": "Address1",
+        "phone" : "811111"
+      }, 
+      {
+        "name": "MARK",
+        "address": "Address1",
+        "phone" : "6745445"
+      },
+      {
+        "name": "TIMOTHY",
+        "address": "Address1",
+        "phone" : "818545428"
+      }
+   ]
+  },
+   {
+    "GroupName":"Pets",
+    "Contacts": [
+      {
+        "name": "RAY",
+        "address": "Address1",
+        "phone" : "811111"
+      }, 
+      {
+        "name": "MARCUS",
+        "address": "Address1",
+        "phone" : "6745445"
+      },
+      {
+        "name": "ALEX",
+        "address": "Address1",
+        "phone" : "818545428"
+      }
+   ]
+  }
+]
